@@ -22,6 +22,14 @@ namespace lab5
 
             result.Add(new CurrencyData
             {
+                name = "MDL",
+                price = 1,
+                buy = 1,
+                sell = 1
+            });
+
+            result.Add(new CurrencyData
+            {
                 name = "EUR",
                 price = 20.5404,
                 buy = 20.3091,
@@ -64,6 +72,14 @@ namespace lab5
                 price = 18.0378,
                 buy = 17.9200,
                 sell = 18.1200
+            });
+
+            result.Add(new CurrencyData
+            {
+                name = "MDL",
+                price = 1,
+                buy = 1,
+                sell = 1
             });
 
             // EUR
@@ -137,9 +153,11 @@ namespace lab5
             CurrencyData data = new CurrencyData();
             CurrencyData? currency = result.FirstOrDefault(p => p.name == name);
             if (currency != null)
-            data.buy = amount * currency.buy;
-            data.sell = amount * currency.sell;
-            data.price = amount * currency.price;
+            {
+                data.buy = amount * currency.buy;
+                data.sell = amount * currency.sell;
+                data.price = amount * currency.price;
+            }
 
             return data;
         }
@@ -149,9 +167,11 @@ namespace lab5
             CurrencyData data = new CurrencyData();
             CurrencyData? currency = result.FirstOrDefault(p => p.name == name);
             if (currency != null)
-            data.buy = amount / currency.buy;
-            data.sell = amount / currency.sell;
-            data.price = amount / currency.price;
+            {
+                data.buy = amount / currency.buy;
+                data.sell = amount / currency.sell;
+                data.price = amount / currency.price;
+            }
 
             return data;
         }

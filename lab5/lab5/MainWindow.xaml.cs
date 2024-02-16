@@ -3,6 +3,7 @@ using System.ComponentModel;
 using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Input;
+using System.Windows.Media.Imaging;
 using System.Xml.Serialization;
 
 namespace lab5
@@ -49,17 +50,41 @@ namespace lab5
             DataContext = this;
         }
 
+        private void ShowData(CurrencyData data)
+        {
+            couse_label.Content = Math.Round(data.price, 2).ToString();
+            buy_label.Content = Math.Round(data.buy, 2).ToString();
+            sell_label.Content = Math.Round(data.sell, 2).ToString();
+            currency_image.Source = new BitmapImage(new Uri($"pack://application:,,,/img/{data.name}.png"));
+        }
+
         private void convert_btn_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                Items.Clear();
-                foreach (var item in currencies.GetCurrencyNames())
-                {
-                    Items.Add(item);
-                }
+                double amount = Convert.ToDouble(amount_tb.Text);
+                string from = from_tb.Text;
+                string to = to_tb.Text;
 
-                NotifyPropertyChanged(nameof(Items));
+                if (from != to)
+                {
+                    CurrencyData data = new CurrencyData();
+                    if (to == "MDL")
+                    {
+                        data = currencies.ConvertToMDL(from, amount);
+                    }
+                    else if (from == "MDL")
+                    {
+                        data = currencies.ConvertFromMDL(to, amount);
+                    }
+                    else
+                    {
+                        data = currencies.ConvertToMDL(from, amount);
+                        data = currencies.ConvertFromMDL(to, data.price);
+                    }
+                    data.name = to;
+                    ShowData(data);
+                }
             }
             catch (Exception ex)
             {

@@ -26,5 +26,16 @@
         <Button x:Name="convert_btn" Click="convert_btn_Click" materialDesign:ButtonAssist.CornerRadius="20" Content="Convert" HorizontalAlignment="Center" Margin="0,230,200,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal" Width="150" Height="40"/>
         <Button x:Name="reset" Click="reset_Click" materialDesign:ButtonAssist.CornerRadius="20" Content="Change course type" HorizontalAlignment="Center" Margin="200,230,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal" Width="190" Height="40" Background="#FFC74C4C" BorderBrush="#FFD0332C"/>
         <Label x:Name="type_label" Content="" HorizontalAlignment="Center" Margin="0,65,0,0" VerticalAlignment="Top" FontSize="16" Foreground="#DD0B519E"/>
+        <materialDesign:Card x:Name="card" HorizontalAlignment="Center" Margin="0,333,0,0" VerticalAlignment="Top" Height="180" Width="430" Background="#FFD8D8D8">
+            <Grid>
+                <Image x:Name="currency_image" RenderOptions.BitmapScalingMode="HighQuality" HorizontalAlignment="Center" Height="50" Margin="0,10,0,0" VerticalAlignment="Top" Width="100" Source="img/MDL.png"/>
+                <Label Content="Sell:" FontSize="20" Margin="15,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                <Label Content="Buy:" FontSize="20" Margin="0,0,15,0" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+                <Label Content="Course:" FontSize="20" Margin="0,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <Label x:Name="sell_label" Width="120" FontSize="20" Margin="15,60,0,0" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="#DD080808"/>
+                <Label x:Name="buy_label" Width="120" FontSize="20" Margin="0,60,15,0" VerticalAlignment="Center" HorizontalAlignment="Right" HorizontalContentAlignment="Right"/>
+                <Label x:Name="couse_label" Width="120" FontSize="20" Margin="0,60,0,0" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center"/>
+            </Grid>
+        </materialDesign:Card>
     </Grid>
 </Window>
