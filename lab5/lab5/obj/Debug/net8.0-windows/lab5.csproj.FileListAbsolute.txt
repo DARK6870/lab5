@@ -51,3 +51,4 @@ D:\GIT\lab5\lab5\lab5\obj\Debug\net8.0-windows\refint\lab5.dll
 D:\GIT\lab5\lab5\lab5\obj\Debug\net8.0-windows\lab5.pdb
 D:\GIT\lab5\lab5\lab5\obj\Debug\net8.0-windows\lab5.genruntimeconfig.cache
 D:\GIT\lab5\lab5\lab5\obj\Debug\net8.0-windows\ref\lab5.dll
+D:\GIT\lab5\lab5\lab5\obj\Debug\net8.0-windows\lab5_Content.g.cs

@@ -1,0 +1,8 @@
+D:\GIT\lab5\lab5\lab5\bin\Release\net8.0-windows\publish\lab5.exe
+D:\GIT\lab5\lab5\lab5\bin\Release\net8.0-windows\publish\lab5.dll
+D:\GIT\lab5\lab5\lab5\bin\Release\net8.0-windows\publish\lab5.deps.json
+D:\GIT\lab5\lab5\lab5\bin\Release\net8.0-windows\publish\lab5.runtimeconfig.json
+D:\GIT\lab5\lab5\lab5\bin\Release\net8.0-windows\publish\lab5.pdb
+D:\GIT\lab5\lab5\lab5\bin\Release\net8.0-windows\publish\MaterialDesignColors.dll
+D:\GIT\lab5\lab5\lab5\bin\Release\net8.0-windows\publish\MaterialDesignThemes.Wpf.dll
+D:\GIT\lab5\lab5\lab5\bin\Release\net8.0-windows\publish\Microsoft.Xaml.Behaviors.dll

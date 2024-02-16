@@ -40,6 +40,8 @@ namespace lab5
                 Items = new ObservableCollection<string>(currencies.GetCurrencyNames());
             }
 
+            card.Opacity = 0;
+
             NotifyPropertyChanged(nameof(Items));
         }
 
@@ -52,10 +54,16 @@ namespace lab5
 
         private void ShowData(CurrencyData data)
         {
+            card.Opacity = 1;
             couse_label.Content = Math.Round(data.price, 2).ToString();
             buy_label.Content = Math.Round(data.buy, 2).ToString();
             sell_label.Content = Math.Round(data.sell, 2).ToString();
             currency_image.Source = new BitmapImage(new Uri($"pack://application:,,,/img/{data.name}.png"));
+        }
+
+        private void ShowError(string message)
+        {
+            error_label.Content = message;
         }
 
         private void convert_btn_Click(object sender, RoutedEventArgs e)
@@ -65,30 +73,42 @@ namespace lab5
                 double amount = Convert.ToDouble(amount_tb.Text);
                 string from = from_tb.Text;
                 string to = to_tb.Text;
-
-                if (from != to)
+                if (from == "" || to == "")
                 {
-                    CurrencyData data = new CurrencyData();
-                    if (to == "MDL")
+                    ShowError("Select currencies!❤️");
+                }
+                else
+                {
+
+                    if (from != to)
                     {
-                        data = currencies.ConvertToMDL(from, amount);
-                    }
-                    else if (from == "MDL")
-                    {
-                        data = currencies.ConvertFromMDL(to, amount);
+                        CurrencyData data = new CurrencyData();
+                        if (to == "MDL")
+                        {
+                            data = currencies.ConvertToMDL(from, amount);
+                        }
+                        else if (from == "MDL")
+                        {
+                            data = currencies.ConvertFromMDL(to, amount);
+                        }
+                        else
+                        {
+                            data = currencies.ConvertToMDL(from, amount);
+                            data = currencies.ConvertFromMDL(to, data.price);
+                        }
+                        data.name = to;
+                        ShowData(data);
+                        ShowError("");
                     }
                     else
                     {
-                        data = currencies.ConvertToMDL(from, amount);
-                        data = currencies.ConvertFromMDL(to, data.price);
+                        ShowError("Enter different currencies!❤️");
                     }
-                    data.name = to;
-                    ShowData(data);
                 }
             }
-            catch (Exception ex)
+            catch
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                ShowError("Enter valid data!💕");
             }
         }
 

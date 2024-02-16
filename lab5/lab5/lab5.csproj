@@ -6,11 +6,23 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon>ghost_4109.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="ghost_4109.png" />
+    <None Remove="img\CHF.png" />
+    <None Remove="img\EUR.png" />
+    <None Remove="img\GBP.png" />
+    <None Remove="img\RON.png" />
+    <None Remove="img\RUB.png" />
+    <None Remove="img\UAH.png" />
     <None Remove="MDL.png" />
     <None Remove="USD.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="ghost_4109.ico" />
   </ItemGroup>
 
   <ItemGroup>
@@ -19,7 +31,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="ghost_4109.png" />
+    <Resource Include="img\CHF.png" />
+    <Resource Include="img\EUR.png" />
+    <Resource Include="img\GBP.png" />
     <Resource Include="img\MDL.png" />
+    <Resource Include="img\RON.png" />
+    <Resource Include="img\RUB.png" />
+    <Resource Include="img\UAH.png" />
     <Resource Include="img\USD.png" />
   </ItemGroup>
 
